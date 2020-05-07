@@ -7,10 +7,14 @@
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import packer.AddressTest;
+import packer.BoxTest;
 import packer.CoordinatesTest;
 import packer.CustomerTest;
 import packer.DepotTest;
+import packer.ManifestTest;
+import packer.PackerTest;
 import packer.ProductTest;
+import packer.ProductWeightComparatorTest;
 
 
 /**
@@ -19,11 +23,15 @@ import packer.ProductTest;
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-    CoordinatesTest.class,
     AddressTest.class,
+    BoxTest.class,
+    CoordinatesTest.class,
+    CustomerTest.class,
     DepotTest.class,
+    ManifestTest.class,
+    PackerTest.class,
     ProductTest.class,
-    CustomerTest.class
+    ProductWeightComparatorTest.class
 })
 
 public class TestSuite {
