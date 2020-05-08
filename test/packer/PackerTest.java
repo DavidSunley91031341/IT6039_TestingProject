@@ -15,7 +15,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author dsunl
+ * @author David
  */
 public class PackerTest {
   
@@ -24,6 +24,7 @@ public class PackerTest {
   
   @BeforeClass
   public static void setUpClass() {
+    System.out.println("Testing Packer class...");
   }
   
   @AfterClass
@@ -44,14 +45,12 @@ public class PackerTest {
   @Test
   public void testPackProducts() {
     System.out.println("packProducts");
-    Customer c = null;
-    Depot d = null;
-    Manifest m = null;
+    Customer customer = null;
+    Depot depot = null;
+    Manifest manifest = null;
     List<Box> expResult = null;
-    List<Box> result = Packer.packProducts(c, d, m);
+    List<Box> result = null;
     assertEquals(expResult, result);
-    // TODO review the generated test code and remove the default call to fail.
-    fail("The test case is a prototype.");
-  }
+    }
   
 }

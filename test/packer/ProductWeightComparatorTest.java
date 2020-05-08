@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author dsunl
+ * @author David
  */
 public class ProductWeightComparatorTest {
   
@@ -23,6 +23,7 @@ public class ProductWeightComparatorTest {
   
   @BeforeClass
   public static void setUpClass() {
+    System.out.println("Testing ProductWeightComparator class...");
   }
   
   @AfterClass
@@ -42,15 +43,14 @@ public class ProductWeightComparatorTest {
    */
   @Test
   public void testCompare() {
-    System.out.println("compare");
-    Product a = null;
-    Product b = null;
-    ProductWeightComparator instance = new ProductWeightComparator();
-    int expResult = 0;
-    int result = instance.compare(a, b);
-    assertEquals(expResult, result);
-    // TODO review the generated test code and remove the default call to fail.
-    fail("The test case is a prototype.");
-  }
+      System.out.println("compare");
+      Product a = new Product("Guitar", 10, true, false);
+      Product b = new Product("Guitar", 10, true, false);
+      ProductWeightComparator instance = new ProductWeightComparator();
+      int expResult = 0;
+      int result = instance.compare(a, b);
+      assertEquals(expResult, result);
+        
+    }
   
 }
