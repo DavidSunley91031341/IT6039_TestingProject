@@ -45,9 +45,9 @@ public class ProductWeightComparatorTest {
   public void testCompare() {
       System.out.println("compare");
       Product a = new Product("Guitar", 10, true, false);
-      Product b = new Product("Guitar", 10, true, false);
+      Product b = new Product("Guitar", 12, true, false);
       ProductWeightComparator instance = new ProductWeightComparator();
-      int expResult = 0;
+      int expResult = 1;
       int result = instance.compare(a, b);
       assertEquals(expResult, result);
         
