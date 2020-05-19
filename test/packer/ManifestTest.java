@@ -47,6 +47,7 @@ public class ManifestTest {
         Product product = new Product("Mandarin", 2, false, false);
         Manifest instance = new Manifest();
         instance.addProduct(product);
+        assertEquals(true, instance.containsProduct(product));
     }
 
     /**
@@ -56,21 +57,25 @@ public class ManifestTest {
     public void testAddProduct_Product_int() {
         System.out.println("addProduct");
         Product product = new Product("Apple", 3, true, false);
-        int quantity = 0;
+        int quantity = 2;
+        int expresult = 2;
         Manifest instance = new Manifest();
-        instance.addProduct(product, quantity);  
+        instance.addProduct(product, quantity);
+        assertEquals(expresult, quantity);
     }
 
     /**
      * Test of removeProduct method, of class Manifest.
      */
-//    @Test
-//    public void testRemoveProduct() {
-//        System.out.println("Testing removeProduct");
-//        Product product = new Product("Apple", 3, true, false);
-//        Manifest instance = new Manifest();
-//        instance.removeProduct(product);
-//    }
+    @Test
+    public void testRemoveProduct() {
+        System.out.println("Testing removeProduct");
+        Product apple = new Product("Apple", 3, true, false);
+        Manifest instance = new Manifest();
+        instance.addProduct(apple);
+        instance.removeProduct(apple);
+        assertEquals(false, instance.isEmpty());
+    }
 
     /**
      * Test of getTotalWeight method, of class Manifest.
@@ -78,10 +83,12 @@ public class ManifestTest {
     @Test
     public void testGetTotalWeight() {
         System.out.println("getTotalWeight");
+        Product apple = new Product("Apple", 3, true, false);
         Manifest instance = new Manifest();
-        double expResult = 0.0;
+        instance.addProduct(apple);
+        double expResult = 3.0;
         double result = instance.getTotalWeight();
-        assertEquals(expResult, result, 0.0);
+        assertEquals(expResult, result, 3.0);
     }
 
     /**
@@ -103,8 +110,10 @@ public class ManifestTest {
     @Test
     public void testIsEmpty() {
         System.out.println("isEmpty");
+        Product apple = new Product("Apple", 3, true, false);
         Manifest instance = new Manifest();
-        boolean expResult = true;
+        instance.addProduct(apple);
+        boolean expResult = false;
         boolean result = instance.isEmpty();
         assertEquals(expResult, result);
     }
@@ -115,24 +124,14 @@ public class ManifestTest {
     @Test
     public void testContainsProduct() {
         System.out.println("containsProduct");
-        Product product = new Product("Mandarin", 2, false, false);
+        Product mandarin = new Product("Mandarin", 2, false, false);
         Manifest instance = new Manifest();
-        boolean expResult = false;
-        boolean result = instance.containsProduct(product);
+        instance.addProduct(mandarin);
+        boolean expResult = true;
+        boolean result = instance.containsProduct(mandarin);
         assertEquals(expResult, result);
     }
 
-    /**
-     * Test of toString method, of class Manifest.
-     */
-//    @Test
-//    public void testToString() {
-//        System.out.println("toString");
-//        Manifest instance = new Manifest();
-//        String expResult = "";
-//        String result = instance.toString();
-//        assertEquals(expResult, result);
-//    }
 
     /**
      * Test of hasFragileItems method, of class Manifest.
@@ -140,8 +139,10 @@ public class ManifestTest {
     @Test
     public void testHasFragileItems() {
         System.out.println("hasFragileItems");
+        Product glass = new Product("Glass", 1, true, true);
         Manifest instance = new Manifest();
-        boolean expResult = false;
+        instance.addProduct(glass);
+        boolean expResult = true;
         boolean result = instance.hasFragileItems();
         assertEquals(expResult, result);
     }
