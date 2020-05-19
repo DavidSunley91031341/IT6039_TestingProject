@@ -9,19 +9,37 @@ public class Coordinates {
     private final double x;
     private final double y;
     
+    /**
+     * Coordinates constructor
+     * @param x coordinate on a flat plane
+     * @param y coordinate on a flat plane
+     */
     public Coordinates(double x, double y) {
         this.x = x;
         this.y = y;
     }
 
+    /**
+     * Gets the x coordinate
+     * @returns the distance in km from a fixed point along the x axis
+     */
     public double getX() {
         return x;
     }
 
+    /**
+     * Gets the y coordinate
+     * @return the distance in km from a fixed point along the y axis
+     */
     public double getY() {
         return y;
     }
     
+    /**
+     * Gets euclidean distance from current coordinates to a set of different coordinates
+     * @param other: coordinates of the other position
+     * @return distance in km
+     */
     public double euclideanDistanceTo(Coordinates other) {
         double xDiff = other.getX() - this.getX();
         double yDiff = other.getY() - this.getY();
@@ -29,6 +47,11 @@ public class Coordinates {
         return dist;
     }
     
+    /**
+     * Gets manhattan distance from current coordinates to a set of different coordinates
+     * @param other: coordinates of the other position
+     * @return distance in km
+     */
     public double manhattanDistanceTo(Coordinates other) {
         double xDiff = other.getX() - this.getX();
         double yDiff = other.getY() - this.getY();
@@ -36,6 +59,11 @@ public class Coordinates {
         return dist;
     }
     
+    /**
+     * Gets the distance from the company's coordinates to a set of different coordinates
+     * @param other: coordinates of the other position
+     * @return distance in km
+     */
     public double companyDistanceTo(Coordinates other) {
         double xDiff1 = other.getX() - this.getX();
         double yDiff1 = other.getY() - this.getY();

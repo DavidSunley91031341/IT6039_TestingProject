@@ -9,7 +9,14 @@ import java.util.List;
  */
 public class Packer {
 
-    public static List<Box> packProducts(Customer c, Depot d, Manifest m) {
+  /**
+   * Packs the products inside the manifest into boxes for the customer
+   * @param c: customer
+   * @param d:depot
+   * @param m:manifest
+   * @return 
+   */  
+  public static List<Box> packProducts(Customer c, Depot d, Manifest m) {
         List<Box> packedBoxes = new ArrayList<>();
         Box b = null;
         while (!m.isEmpty()) { // repeat until all items are packed

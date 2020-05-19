@@ -10,7 +10,13 @@ import java.util.Comparator;
  */
 public class ProductWeightComparator implements Comparator<Product> {
     
-    public int compare(Product a, Product b) {
+  /**
+   * Sorts the products by descending weight
+   * @param a: first product
+   * @param b: second product
+   * @return sorted list
+   */  
+  public int compare(Product a, Product b) {
         if (a.getWeight() < b.getWeight()) {return 1;}
         else if (a.getWeight() > b.getWeight()) {return -1;}
         else return a.getName().compareTo(b.getName());
