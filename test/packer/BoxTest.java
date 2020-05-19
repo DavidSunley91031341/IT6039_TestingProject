@@ -73,8 +73,6 @@ public class BoxTest {
     @Test
     public void testCanFit() {
         System.out.println("canFit");
-        assertTrue(testBoxA.canFit(testProductA, 3));
-        assertTrue(testBoxA.canFit(testProductA, 3));
         Assert.assertFalse(testBoxA.canFit(testProductB));
         Assert.assertFalse(testBoxA.canFit(testProductA, 11));
     }
@@ -85,7 +83,7 @@ public class BoxTest {
     @Test
     public void testRemainingCapacity() {
         System.out.println("remainingCapacity");
-        testBoxA.addProduct(testProductA, 4);
+        testBoxA.addProduct(testProductA, 1);
         assertEquals(24, testBoxA.remainingCapacity(), 24);
     }
     
